@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: my_postgres_swensen
+    environment:
+      POSTGRES_DB: swensen
+      POSTGRES_USER: swensen
+      POSTGRES_PASSWORD: swensen
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
